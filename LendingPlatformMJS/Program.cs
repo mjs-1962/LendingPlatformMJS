@@ -47,9 +47,7 @@ namespace LendingPlatform
             Console.Clear();
             Console.WriteLine("Please Enter A Number from 1 To 4 To Choose An Option From The Menu Below");
             Console.WriteLine("1 - Enter Loan Details");
-            Console.WriteLine("2 - Total Applicants To date");
-            Console.WriteLine("3 - Total Value Of Loans Written To date");
-            Console.WriteLine("4 - Mean Average Of Loan To Value Of Applications To Date");
+            Console.WriteLine("2 - Summary of Loan data");
         }
 
 
@@ -58,20 +56,19 @@ namespace LendingPlatform
             int totalApplications = loanApplications.Count();
             int succesfullLoans = loanApplications.Count(p => p.LoanApproved);
             int rejectedLoans = loanApplications.Count(p => p.LoanApproved == false);
-            //Decimal TotalLoansWritten = loanApplications.Sum(p => p.LoanAmount where p.LoanApproved == true);
 
-            var TotalLoansWritten =
-            from la in loanApplications
-            group la by la.LoanApproved into loanGroup
-            select new
-            {
-                Team = loanGroup.Key,
-                LoanTotal = loanGroup.Sum(x => x.LoanAmount),
-            };
+            decimal totalLoanValuesWritten = loanApplications.Where(item => item.LoanApproved)
+                                              .Sum(item => item.LoanAmount);
 
+            decimal meanLoanValues = Math.Round(loanApplications.Average(item => item.LTV()), 2);
+
+            
 
             Console.Clear();
             Console.WriteLine($"Application Summary Total: {totalApplications} Successful {succesfullLoans} Rejected {rejectedLoans}");
+            Console.WriteLine($"");
+            Console.WriteLine($"Total Value Written: {totalLoanValuesWritten} Mean Value of All Applications: {meanLoanValues}");
+            Console.WriteLine("Hit Enter To Clear The Screen");
             Console.ReadLine();
         }
 
@@ -116,6 +113,8 @@ namespace LendingPlatform
             {
                 Console.WriteLine($"Loan Application No. {loanApplication.Id} Failed, Reason: {loanApplication.RejectionReason}");
             }
+
+            Console.WriteLine("Hit Enter To Clear The Screen");
             Console.ReadLine();
         }
 
