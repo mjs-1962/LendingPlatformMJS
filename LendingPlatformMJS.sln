@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LendingPlatformMJS", "LendingPlatformMJS\LendingPlatformMJS.csproj", "{90609B52-19A2-48A9-88B3-12A8B3BA2492}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90609B52-19A2-48A9-88B3-12A8B3BA2492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90609B52-19A2-48A9-88B3-12A8B3BA2492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90609B52-19A2-48A9-88B3-12A8B3BA2492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90609B52-19A2-48A9-88B3-12A8B3BA2492}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8063CD57-4083-414B-811E-8CDB82AF76EB}
+	EndGlobalSection
+EndGlobal
